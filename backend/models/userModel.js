@@ -6,6 +6,8 @@ const userSchema = mongoose.Schema(
     name: {
       type: String,
       required: true,
+      maxLength: [30, 'Name cannot exceed 30 characters'],
+      minLength: [4, 'Name should have more than 4 characters'],
     },
     email: {
       type: String,
@@ -15,6 +17,7 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
       required: true,
+      minLength: [8, ' should be greater than 8 characters'],
     },
     isAdmin: {
       type: Boolean,
